@@ -9,13 +9,13 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // Checkout the code from the GitHub repository
+
                 git branch: 'main', url: 'https://github.com/nishant141114/jenkins-test-1.git'
             }
         }
         stage('Terraform Init') {
             steps {
-                // Initialize Terraform
+                // new code ehdcbejfd hbd j
                 sh 'terraform init'
             }
         }

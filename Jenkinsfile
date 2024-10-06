@@ -4,7 +4,7 @@ pipeline {
     environment {
         AWS_ACCESS_KEY_ID = credentials('aws-access-key-id')
         AWS_SECRET_ACCESS_KEY = credentials('aws-secret-access-key')
-        PATH = "/usr/local/bin:/opt/homebrew/bin/terraform"
+        PATH = "/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin"
     }
 
     stages {
@@ -17,13 +17,13 @@ pipeline {
         stage('Terraform Init') {
             steps {
                 // new code ehdcbejfd hbd j
-                sh 'terraform init'
+                sh '/opt/homebrew/bin/terraform init'
             }
         }
         stage('Terraform Apply') {
             steps {
                 // Apply the Terraform configuration
-                sh 'terraform apply -auto-approve'
+                sh '/opt/homebrew/bin/terraform apply -auto-approve'
             }
         }
     }
